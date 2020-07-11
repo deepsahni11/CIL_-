@@ -7,15 +7,14 @@ import warnings
 warnings.filterwarnings("ignore")
 import pandas as pd
 from sklearn.metrics import mean_squared_error
-
 from numpy import load
 from numpy import save
 
 
-training_x = np.load("../Code_github/X_train_datasets_bootstrap.npy", allow_pickle = True) 
-test_x = np.load("../Code_github/X_test_real_datasets_bootstrap.npy", allow_pickle = True)
+training_x = np.load("X_train_datasets_1_bootstrap.npy", allow_pickle = True) 
+test_x = np.load("X_test_datasets_bootstrap.npy", allow_pickle = True)
 
-training_y = np.load("../Code_github/y_train_recall_datasets_bootstrap.npy", allow_pickle = True)
+training_y = np.load("y_train_recall_datasets_1_bootstrap.npy", allow_pickle = True)
 
 
 predictions_recall = []
@@ -29,10 +28,6 @@ for b in range(len(training_x)): # number of bootstrapped samples
 
     predictions_recall = []
 
-    
-  
-
-  
     c = 1
     for p in [20]: 
         for q in [15]: 
@@ -59,6 +54,4 @@ for b in range(len(training_x)): # number of bootstrapped samples
                 
                 c= c +1
 
-
-
-    np.save("../Code_github/recall_predictions_bootstrap_" + str(b) + ".npy" , predictions_recall)
+    np.save("recall_predictions_bootstrap_" + str(b) + ".npy" , predictions_recall)
