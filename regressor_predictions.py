@@ -12,7 +12,7 @@ from numpy import save
 
 
 training_x = np.load("X_train_datasets_1_bootstrap.npy", allow_pickle = True) 
-test_x = np.load("X_test_datasets_bootstrap.npy", allow_pickle = True)
+test_x = np.load("X_test_real_datasets_bootstrap.npy", allow_pickle = True)
 
 training_y = np.load("y_train_recall_datasets_1_bootstrap.npy", allow_pickle = True)
 
